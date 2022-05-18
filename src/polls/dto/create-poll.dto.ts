@@ -1,5 +1,6 @@
 import { IsString, IsNotEmpty, IsDate, IsDateString } from 'class-validator';
-import { Answer } from 'src/schemas/answer.schema';
+import { Answer } from 'src/answers/answer.schema';
+
 
 export class CreatePollDto {
     @IsString()

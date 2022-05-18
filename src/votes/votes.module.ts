@@ -2,11 +2,12 @@ import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { VotesService } from './votes.service';
 import { VotesController } from './votes.controller';
-import { Vote, VoteSchema } from 'src/schemas/vote.schema';
+
 import { AnswersModule } from 'src/answers/answers.module';
-import { Poll, PollSchema } from 'src/schemas/poll.schema';
-import { Answer, AnswerSchema } from 'src/schemas/answer.schema';
+import { Poll, PollSchema } from 'src/polls/poll.schema';
+import { Answer, AnswerSchema } from 'src/answers/answer.schema';
 import { PollsModule } from 'src/polls/polls.module';
+import { Vote, VoteSchema } from './vote.schema';
 
 @Module({
   imports: [

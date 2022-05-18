@@ -1,7 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose, { Document, ObjectId  } from 'mongoose';
 import { Transform, Type } from 'class-transformer';
-import { Answer, AnswerSchema } from 'src/schemas/answer.schema';
+import { Answer } from 'src/answers/answer.schema';
 
 export type PollDocument = Poll & Document;
 

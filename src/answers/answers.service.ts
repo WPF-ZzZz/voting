@@ -1,12 +1,12 @@
 import mongoose, { Model } from 'mongoose';
 import { Injectable } from '@nestjs/common';
 import { InjectConnection, InjectModel } from '@nestjs/mongoose';
-import { Poll, PollDocument } from 'src/schemas/poll.schema';
-import { Answer, AnswerDocument } from 'src/schemas/answer.schema';
+import { Poll, PollDocument } from '../polls/poll.schema';
+import { Answer, AnswerDocument } from './answer.schema';
 
 import { CreateAnswerDto } from './dto/create-answer.dto';
 import { UpdateAnswerDto } from './dto/update-answer.dto';
-//import { VotesService } from 'src/votes/votes.service';
+//import { VotesService } from '../votes/votes.service';
 
 @Injectable()
 export class AnswersService {

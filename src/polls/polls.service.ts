@@ -1,14 +1,14 @@
 import { Model } from 'mongoose';
 import { Injectable } from '@nestjs/common';
 import { InjectConnection, InjectModel } from '@nestjs/mongoose';
-import { Poll, PollDocument } from 'src/schemas/poll.schema';
-//import { Answer, AnswerDocument } from 'src/schemas/answer.schema';
+import { Poll, PollDocument } from './poll.schema';
+//import { Answer, AnswerDocument } from '../answers/answer.schema';
 import { CreatePollDto } from './dto/create-poll.dto';
 import { UpdatePollDto } from './dto/update-poll.dto';
 import * as mongoose from 'mongoose';
 
 import { NotFoundException } from '@nestjs/common';
-//import { AnswersService } from 'src/answers/answers.service';
+//import { AnswersService } from '../answers/answers.service';
 
 
 

@@ -11,5 +11,3 @@ export class CreateAnswerDto {
 }
 
 export default CreateAnswerDto;
-
-//export class CreateAnswerDto {}

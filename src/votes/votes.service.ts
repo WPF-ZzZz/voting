@@ -3,11 +3,13 @@ import { Injectable, NotFoundException, UnprocessableEntityException } from '@ne
 import { InjectModel } from '@nestjs/mongoose';
 import { CreateVoteDto } from './dto/create-vote.dto';
 import { UpdateVoteDto } from './dto/update-vote.dto';
-import { Vote, VoteDocument } from 'src/schemas/vote.schema';
-import { Answer, AnswerDocument } from 'src/schemas/answer.schema';
+
+import { Vote, VoteDocument } from './vote.schema';
+import { Answer, AnswerDocument } from 'src/answers/answer.schema';
 import { AnswersService } from 'src/answers/answers.service';
-import { Poll, PollDocument } from 'src/schemas/poll.schema';
+import { Poll, PollDocument } from 'src/polls/poll.schema';
 import { PollsService } from 'src/polls/polls.service';
+
 
 @Injectable()
 export class VotesService {
@@ -40,7 +42,6 @@ export class VotesService {
     if (!isCampaignAvailable) {
       throw new UnprocessableEntityException('Not able to vote as campaign end already.');
     }
-
 
     const filters = {};
 
