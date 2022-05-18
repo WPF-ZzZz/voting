@@ -12,9 +12,10 @@ export class CreateVoteDto {
     answerId: string
 
     @IsNotEmpty()
-    @Matches(/^[A-Z]{1,2}[0-9]{6}[0-9A]$/, { message: "$value is not a right HKID format." })
-    @IsHKID({message: '$value is not a valid HKID.'})
+    @Matches(/^[A-Z]{1,2}[0-9]{6}[0-9A]$/, { message: "($value) is not a right HKID format." })
+    @IsHKID()
     hkid: string
+    
 }
 
 export default CreateVoteDto;

@@ -8,10 +8,14 @@ import {
 
   import * as hkid from "hkid";
   
-  @ValidatorConstraint({ async: true })
+  @ValidatorConstraint({ async: false })
   export class IsHKIDConstraint implements ValidatorConstraintInterface {
     async validate(str: any, args: ValidationArguments) {
-        //return hkid.validate(str);
+
+        //ref : https://www.npmjs.com/package/hkid
+        return hkid.validate(str, { checkPrefix: true});
+
+        /*
         var strValidChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
         // basic check length
@@ -57,6 +61,11 @@ import {
         var verify = remaining == 0 ? 0 : 11 - remaining;
     
         return verify == checkDigit || (verify == 10 && checkDigit == 'A');
+        */
+    }
+
+    defaultMessage(args: ValidationArguments) {
+      return '($value) is not a valid HKID.';
     }
   }
   
@@ -67,7 +76,7 @@ import {
         propertyName: propertyName,
         options: validationOptions,
         constraints: [],
-        validator: IsHKID,
+        validator: IsHKIDConstraint,
       });
     };
   }
