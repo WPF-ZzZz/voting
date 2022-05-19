@@ -7,7 +7,7 @@ import { AnswersModule } from './answers/answers.module';
 import { VotesModule } from './votes/votes.module';
 
 @Module({
-  imports: [PollsModule, MongooseModule.forRoot('mongodb://localhost/simple-voting'), AnswersModule, VotesModule],
+  imports: [MongooseModule.forRoot('mongodb://Fei:27017,Fei:27018,Fei:27019/simple-voting?replicaSet=rs'), PollsModule, AnswersModule, VotesModule],
   controllers: [AppController],
   providers: [AppService],
 })
