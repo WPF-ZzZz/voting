@@ -7,7 +7,8 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.setGlobalPrefix('/api/v1');
-  app.useGlobalPipes(new ValidationPipe({ transform: true, validateCustomDecorators: true }));
+  //app.useGlobalPipes(new ValidationPipe({ transform: true, validateCustomDecorators: true }));
+  app.useGlobalPipes(new ValidationPipe({ transform: true, validateCustomDecorators: true, whitelist : true }));
   
   const config = new DocumentBuilder()
                     .setTitle('Vote API')

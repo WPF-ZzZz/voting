@@ -1,11 +1,5 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete, UseFilters } from '@nestjs/common';
-import {
-  ApiCreatedResponse,
-  ApiNotFoundResponse,
-  ApiOkResponse,
-  ApiTags,
-  ApiUnprocessableEntityResponse,
-} from '@nestjs/swagger';
+import { ApiCreatedResponse,  ApiNotFoundResponse,  ApiOkResponse,  ApiTags,  ApiUnprocessableEntityResponse} from '@nestjs/swagger';
 import { HttpExceptionFilter } from '../filters/http-exception.filter';
 import { PollsService } from './polls.service';
 import { CreatePollDto } from './dto/create-poll.dto';
@@ -49,11 +43,4 @@ export class PollsController {
   remove(@Param('id') id: string) {
     return this.pollsService.remove(id);
   }
-
-  /*
-  @Get('result')
-  getResult() {
-    return this.pollsService.
-  }
-  */
 }

@@ -13,7 +13,6 @@ import { Vote, VoteSchema } from 'src/votes/vote.schema';
       { name: Answer.name, schema: AnswerSchema },
       { name: Poll.name, schema: PollSchema }
     ])
-    //AnswersModule
   ], 
   controllers: [PollsController],
   providers: [PollsService],

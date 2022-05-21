@@ -12,6 +12,7 @@ export type PollDocument = Poll & Document;
     },
 })
 export class Poll {
+    
     @Transform(({ value }) => value.toString())
     _id: ObjectId;
 
