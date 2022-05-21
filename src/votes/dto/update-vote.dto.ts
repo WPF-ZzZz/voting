@@ -1,5 +1,5 @@
 //import { PartialType } from '@nestjs/mapped-types';
 import { CreateVoteDto } from './create-vote.dto';
-import { PartialType, PickType } from '@nestjs/swagger';
+import { OmitType, PartialType, PickType } from '@nestjs/swagger';
 
-export class UpdateVoteDto extends PartialType(CreateVoteDto) {}
+export class UpdateVoteDto extends OmitType(CreateVoteDto, ['pollId'] as const) {}
