@@ -22,14 +22,31 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
+## Prerequisite
+
+The following must be installed: 
+Nodejs v16.15.0 or above
+NPM v8.5.5 or above
+MongoDB v4.0.0 or above with Replica Set
+
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+A simple voting API.
 
 ## Installation
 
 ```bash
 $ npm install
+```
+
+Update MongoDB connection
+
+# development
+
+To run MongoDB replia set if you don't have it
+
+```bash
+$ run-rs -v 4.0.0 --shell 
 ```
 
 ## Running the app
