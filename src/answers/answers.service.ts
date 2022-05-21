@@ -48,7 +48,7 @@ export class AnswersService {
   async update(id: string, updateAnswerDto: UpdateAnswerDto) {
     const answer = await this.answerModel
       .findByIdAndUpdate(id, updateAnswerDto)
-      .setOptions({ overwrite: true, new: true });
+      .setOptions({ new: true });
     if (!answer) {
       throw new NotFoundException();
     }

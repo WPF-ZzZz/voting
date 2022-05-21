@@ -81,7 +81,7 @@ export class PollsService {
   async update(id: string, updatePollDto: UpdatePollDto) {
     const poll = await this.pollModel
       .findByIdAndUpdate(id, updatePollDto)
-      .setOptions({ overwrite: true, new: true });
+      .setOptions({ new: true });
     if (!poll) {
       throw new NotFoundException();
     }

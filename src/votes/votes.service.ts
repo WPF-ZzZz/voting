@@ -55,7 +55,7 @@ export class VotesService {
 
     const existingAnswer = await this.answerModel
       .findByIdAndUpdate(answer, { $inc: { 'voteCount': 1 } })
-      .setOptions({ overwrite: true, new: true })
+      .setOptions({ new: true })
       .exec();
 
     if (!existingAnswer) {
@@ -94,7 +94,7 @@ export class VotesService {
   async update(id: string, updatevoteDto: UpdateVoteDto) {
     const vote = await this.voteModel
       .findByIdAndUpdate(id, updatevoteDto)
-      .setOptions({ overwrite: true, new: true });
+      .setOptions({ new: true });
     if (!vote) {
       throw new NotFoundException();
     }
@@ -107,7 +107,7 @@ export class VotesService {
 
     const existingAnswer = await this.answerModel
       .findByIdAndUpdate(answer, { $inc: { 'voteCount': -1 } })
-      .setOptions({ overwrite: true, new: true })
+      .setOptions({ new: true })
       .exec();
 
     if (!result) {
