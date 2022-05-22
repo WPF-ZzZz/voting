@@ -12,11 +12,14 @@ export class HttpExceptionFilter implements ExceptionFilter {
   private readonly logger = new Logger(HttpExceptionFilter.name);
 
   catch(exception: HttpException, host: ArgumentsHost) {
+
+    const errorMessage = JSON.parse(JSON.stringify(exception.getResponse())).message;
+
     const ctx = host.switchToHttp();
     const response = ctx.getResponse<Response>();
     const request = ctx.getRequest<Request>();
     const statusCode = exception.getStatus();
-    const message = exception.message || null;
+    const message = errorMessage || exception.message || null;
 
     const body = {
       statusCode,
