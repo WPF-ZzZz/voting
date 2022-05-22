@@ -35,7 +35,10 @@ A simple voting API.
 ## Installation
 
 ```bash
+# install nestjs cli globally 
 $ npm i -g @nestjs/cli
+
+# install packages
 $ npm install
 ```
 
@@ -56,6 +59,10 @@ $ npm run start:dev
 # production mode
 $ npm run start:prod
 ```
+
+## API documentation
+
+[localhost:3000/swagger](http://localhost:3000/swagger)
 
 ## Test
 
